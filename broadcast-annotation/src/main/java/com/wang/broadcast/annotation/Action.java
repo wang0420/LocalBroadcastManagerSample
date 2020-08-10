@@ -8,7 +8,11 @@ import java.lang.annotation.Target;
 /**
  * @author wnagwei
  * @date 2019/5/18
+ * @Retention(RetentionPolicy.CLASS) 自定义注解默认是RetentionPolicy.CLASS，
+ * 看的出来Java是推荐把注解放到.class中去的。
+ * @Target(ElementType.METHOD) METHOD:用于描述方法
  */
+
 @Retention(RetentionPolicy.CLASS)
 @Target(ElementType.METHOD)
 public @interface Action {
