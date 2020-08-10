@@ -1,0 +1,3 @@
+include ':broadcast-compiler'
+include ':broadcast-annotation'
+include ':app',':broadcast'
