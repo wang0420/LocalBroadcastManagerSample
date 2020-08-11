@@ -5,7 +5,7 @@ def siteUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/tree/mast
 def gitUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/tree/master/broadcast-annotation'    // # Git仓库的url
 def issueUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/issues' // # Git仓库issues的url
 //参考 compile 'groupId:artifactId:version'，groupId就是group version下面的版本
-group "com.github.wang" //groupId
+group "com.github.wei" //groupId
 version = "1.0.0" // # 发布版本号
 def artifactIdName = 'broadcast-annotation'// # artifactId
 def projectName = 'broadcast-annotation' // #这个是显示在bintray 仓库中的项目名字，一般可用项目名称
@@ -74,6 +74,7 @@ if (project.getPlugins().hasPlugin('com.android.application') ||
         classifier = 'sources'
     }
     task javadoc(type: Javadoc) {
+        failOnError false //必须添加以免出错
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     }
