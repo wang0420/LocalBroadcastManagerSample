@@ -65,8 +65,7 @@ install {
 }
 
 
-if (project.getPlugins().hasPlugin('com.android.application') ||
-        project.getPlugins().hasPlugin('com.android.library')) {
+if (project.getPlugins().hasPlugin('com.android.application') || project.getPlugins().hasPlugin('com.android.library')) {
     println('--------android--------')
     //android  javadoc和sources文件的生成
     task sourcesJar(type: Jar) {
@@ -101,16 +100,6 @@ if (project.getPlugins().hasPlugin('com.android.application') ||
 artifacts {
     archives sourcesJar
     archives javadocJar
-}
-
-//关闭java-8变态的java-doc检查
-if (JavaVersion.current().isJava8Compatible()) {
-    allprojects {
-        tasks.withType(Javadoc) {
-            options.addStringOption('Xdoclint:none', '-quiet')
-            options.encoding('UTF-8')
-        }
-    }
 }
 
 
