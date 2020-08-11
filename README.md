@@ -29,6 +29,8 @@
  TypeSpec，代表一个类，接口，或者枚举声明。
  FieldSpec，代表一个成员变量，一个字段声明。
  JavaFile，包含一个顶级类的Java文件。
+ 
+ $L相当于一个占位符，代表的是一个字面量
  $S for Strings，代表一个字符串
  $T for Types，代表一个类型，使用它会自动import导入包
  $N for Names，代表我们自己生成的方法名或者变量名等等

@@ -139,7 +139,8 @@ public class BroadcastProxy {
                 .endControlFlow()
                 .addStatement("mCounter++")
                 .beginControlFlow("if (mCounter == 1)")
-                .addStatement("$T filter = new $L()", INTENT_FILTER, INTENT_FILTER)
+                .addStatement("$T filter = new $T()", INTENT_FILTER, INTENT_FILTER)
+
                 .add(generateAddAction())
                 .addStatement("$T.getInstance(mContext).registerReceiver(mReceiver, filter)", LOCAL_BROADCAST_MANAGER)
                 .endControlFlow()
