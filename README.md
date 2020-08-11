@@ -4,6 +4,7 @@
 # https://www.jianshu.com/p/fba2eec47976
 # 断点APT
 # https://www.jianshu.com/p/80ca9ad7e346
+https://www.jianshu.com/p/bcddc376c0ef
 
 
 # init()

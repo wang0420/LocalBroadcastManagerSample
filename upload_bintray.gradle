@@ -1,0 +1,96 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+//上传到Jcenter 相关配置   以下配置都需要修改成自己的数据
+def siteUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample'    // # 项目的主页
+def gitUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample.git'    // # Git仓库的url
+def issueUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/issues' // # Git仓库issues的url
+//参考 compile 'groupId:artifactId:version'，groupId就是group version下面的版本
+group "com.github.wang" //groupId
+version = "1.0.0" // # 发布版本号
+def artifactIdName = 'broadcast'// # artifactId
+def projectName = 'broadcast' //这个是显示在bintray 仓库中的项目名字，一般可用项目名称
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "maven"// 你要上传的库的名字  需要和建仓库用的名字一致,即在组下面建立的仓库名称
+        name = projectName    //这个是显示在bintray 仓库中的项目名字，一般可用项目名称
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        issueTrackerUrl = issueUrl
+        userOrg = "wangwei15"  //组织名  需要和建组织用的名字一致
+        //自己创建的organization名称，一定要全是小写字母，即使当时创建的名称含有大写，这里全部转换为小写，否则404
+        licenses = ['MIT']//不能随便写，只能是仓库创建时选择的license type
+        publish = true// 是否是公开项目，公开别人可以引用
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                name artifactIdName //project.name的属性值建议与project.artifactId一致
+                artifactId artifactIdName //依赖包最后面的部分
+                description 'A android lib allows you to easily use.'
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name 'MIT' //和之前自己定义的协议一致
+                        url 'https://raw.githubusercontent.com/minggo620/Pluto-Android/master/LICENSE'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'wangwei' //填写的一些基本信息
+                        name '王伟'
+                        email '709693972@qq.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+
+//broadcast-compiler  依赖包需要注释以下代码  因为是java 包
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    failOnError false //必须添加以免出错
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+//broadcast-compiler  依赖包需要注释上面代码  因为是java 包
+javadoc {
+    options {
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
