@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * 1.0.1
  * @author wnagwei
  * @date 2019/5/18
  * @Retention(RetentionPolicy.CLASS) 自定义注解默认是RetentionPolicy.CLASS，
