@@ -51,5 +51,10 @@
       <option name="name" value="E:\AndroidTool\SDK\Androidsdk\extras\android\m2repository" />
       <option name="url" value="file:/E:/AndroidTool/SDK/Androidsdk/extras/android/m2repository/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven2" />
+      <option name="name" value="maven2" />
+      <option name="url" value="https://dl.bintray.com/wangwei15/maven/" />
+    </remote-repository>
   </component>
 </project>

@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 /**
- * @author wnagwei
+ * @author wangwei
  * @date 2019/5/18
  */
 public class BroadcastUtil {
