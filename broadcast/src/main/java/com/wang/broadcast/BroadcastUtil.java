@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 /**
+ * 1.0.3
  * @author wangwei
  * @date 2019/5/18
  */
@@ -83,7 +84,7 @@ public class BroadcastUtil {
     }
 
     private static BroadcastInject findProxy(Object host) {
-        if (proxyArray!= null && proxyArray.size() != 0 && host != null) {
+        if (proxyArray != null && proxyArray.size() != 0 && host != null) {
             return proxyArray.get(host.hashCode());
         }
         return null;

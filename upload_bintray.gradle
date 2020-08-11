@@ -1,12 +1,12 @@
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 //上传到Jcenter 相关配置   以下配置都需要修改成自己的数据
-def siteUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/tree/master/broadcast-annotation'    // # 项目的主页
-def gitUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/tree/master/broadcast-annotation'    // # Git仓库的url
+def siteUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample'    // # 项目的主页
+def gitUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample'    // # Git仓库的url
 def issueUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/issues' // # Git仓库issues的url
 //参考 compile 'groupId:artifactId:version'，groupId就是group version下面的版本
 group "com.github.wang" //groupId
-version = "1.0.1" // # 发布版本号
+version = "1.0.2" // # 发布版本号
 def artifactIdName = 'broadcast-annotation'// # artifactId
 def projectName = 'broadcast-annotation' // #这个是显示在bintray 仓库中的项目名字，一般可用项目名称
 
