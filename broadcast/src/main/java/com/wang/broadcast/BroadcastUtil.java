@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 /**
- * 1.0.3
+ * 1.0.0
+ *
  * @author wangwei
  * @date 2019/5/18
  */
