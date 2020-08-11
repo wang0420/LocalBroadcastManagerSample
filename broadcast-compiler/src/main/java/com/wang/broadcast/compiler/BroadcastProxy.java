@@ -55,18 +55,19 @@ public class BroadcastProxy {
     }
 
     public TypeSpec generateClass() {
-        TypeSpec.Builder builder = TypeSpec.classBuilder(proxyClassName)
-                .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
-                .addSuperinterface(ParameterizedTypeName.get(injectClassName, ClassName.get(typeElement)))
-                .addField(FieldSpec.builder(CONTEXT, "mContext", Modifier.PRIVATE).build())
-                .addField(FieldSpec.builder(ParameterizedTypeName.get(ARRAY_LIST, hostClassName), "mHosts", Modifier.PRIVATE).build())
-                .addField(FieldSpec.builder(TypeName.INT, "mCounter", Modifier.PRIVATE).build())
+        TypeSpec.Builder builder = TypeSpec.classBuilder(proxyClassName)//类名
+                .addModifiers(Modifier.PUBLIC, Modifier.FINAL)//修饰符
+                .addSuperinterface(ParameterizedTypeName.get(injectClassName, ClassName.get(typeElement)))//添加接口实现
+                .addField(FieldSpec.builder(CONTEXT, "mContext", Modifier.PRIVATE).build())//成员变量mContext
+                .addField(FieldSpec.builder(ParameterizedTypeName.get(ARRAY_LIST, hostClassName), "mHosts", Modifier.PRIVATE).build())//成员变量
+                .addField(FieldSpec.builder(TypeName.INT, "mCounter", Modifier.PRIVATE).build())//成员变量
                 .addField(makeReceiverField())
                 .addMethod(makeRegisterMethod())
                 .addMethod(makeUnregisterMethod());
         return builder.build();
     }
 
+    //mReceiver成员变量
     private FieldSpec makeReceiverField() {
         return FieldSpec.builder(BROADCAST_RECEIVER, "mReceiver")
                 .addModifiers(Modifier.PRIVATE)

@@ -21,3 +21,15 @@
 #  process()
  * 这相当于每个处理器的主函数main()。你在这里写你的扫描、评估和处理注解的代码，
  * 以及生成Java文件。输入参数RoundEnviroment，可以让你查询出包含特定注解的被注解元素。
+ 
+ 
+ 
+ #JavaPoet中有几个常用的类：
+ MethodSpec，代表一个构造函数或方法声明。
+ TypeSpec，代表一个类，接口，或者枚举声明。
+ FieldSpec，代表一个成员变量，一个字段声明。
+ JavaFile，包含一个顶级类的Java文件。
+ $S for Strings，代表一个字符串
+ $T for Types，代表一个类型，使用它会自动import导入包
+ $N for Names，代表我们自己生成的方法名或者变量名等等
+ 
