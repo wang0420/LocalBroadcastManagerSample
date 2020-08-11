@@ -2,7 +2,6 @@ package com.wang.broadcast;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -70,20 +69,12 @@ public class MainActivity extends AppCompatActivity {
         BroadcastUtil.unregister(this);
     }
 
-    @Action(ACTION_TEST)
-    public void setText(Bundle bundle) {
-        String str = bundle.getString("text");
-        Log.w("TAG","Main_setText--"+str);
-    }
 
-    @Action("test1")
-    public void test1() {
+    @Action("main_activity")
+    public void mainaa() {
         // 参数测试
 
     }
 
-    @Action("test2")
-    public void test2(String action, Bundle bundle) {
-        // 参数测试
-    }
+
 }

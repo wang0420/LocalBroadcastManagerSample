@@ -2,6 +2,8 @@
 # 参考文献
 # https://www.jianshu.com/p/96bf387f79ef
 # https://www.jianshu.com/p/fba2eec47976
+# 断点APT
+# https://www.jianshu.com/p/80ca9ad7e346
 
 
 # init()
@@ -10,8 +12,8 @@
  * ProcessingEnviroment提供很多有用的工具类如Elements, Types和Filer等。
 
 # getSupportedAnnotationTypes()
- * 这里你必须指定，这个注解处理器是注册给哪个注解的。注意，它的返回值是一个字符串的集合，
- * 包含本处理器想要处理的注解类型的合法全称。
+ * 这里你必须指定，这个注解处理器是注册给哪个注解的。注意，告知Processor哪些注解需要处理。
+ 返回一个Set集合，集合内容为 自定义注解的包名+类名。
 
 # getSupportedSourceVersion()
  * 用来指定你使用的Java版本。通常这里返回SourceVersion.latestSupported()。

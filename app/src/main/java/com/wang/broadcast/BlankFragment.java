@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import com.wang.broadcast.annotation.Action;
-
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -68,5 +66,26 @@ public class BlankFragment extends Fragment {
     public void setText(Bundle bundle) {
         String str = bundle.getString("text");
         mTextView.append(str + " - " + this.toString() + " - " + str + "\n");
+    }
+
+    @Action("HAHAHHHA")
+    public void HAHAHHHA(Bundle bundle) {
+        String str = bundle.getString("text");
+        mTextView.append(str + " - " + this.toString() + " - " + str + "\n");
+    }
+    @Action("test111")
+    public void test11() {
+        // 参数测试
+
+    }
+    @Action("test11111")
+    public void test1111() {
+        // 参数测试
+
+    }
+    @Action("test1")
+    public void test1() {
+        // 参数测试
+
     }
 }

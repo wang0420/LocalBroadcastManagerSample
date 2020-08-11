@@ -60,7 +60,9 @@ public class ActionProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnv) {
         mProxyMap.clear();
+        // 返回所有被注解了@Action的元素的列表
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(Action.class);
+        // 遍历 根据 element 的类型做相应的处理，并存进 map 集合
         for (Element element : elements) {
             if (!checkAnnotationValid(element, Action.class)) {
                 return false;
@@ -68,15 +70,19 @@ public class ActionProcessor extends AbstractProcessor {
 
             ExecutableElement executableElement = (ExecutableElement) element;
 
+            //返回class 类
             TypeElement typeElement = (TypeElement) executableElement.getEnclosingElement();
+            //返回class 类名称
             String qualifiedName = typeElement.getQualifiedName().toString();
 
+            //判断是否添加到map  否则添加
             BroadcastProxy proxyInfo = mProxyMap.get(qualifiedName);
             if (proxyInfo == null) {
                 proxyInfo = new BroadcastProxy(elementsUtil, typeElement);
                 mProxyMap.put(qualifiedName, proxyInfo);
             }
 
+            //输出注解属性值
             Action annotation = executableElement.getAnnotation(Action.class);
             String[] ids = annotation.value();
             if (ids.length <= 0) {
@@ -106,6 +112,7 @@ public class ActionProcessor extends AbstractProcessor {
     }
 
     private boolean checkAnnotationValid(Element element, Class annotationClass) {
+        // 判断元素的类型为METHOD
         if (element.getKind() != ElementKind.METHOD) {
             error(element, "%s must be declared on method.", annotationClass.getSimpleName());
             return false;
