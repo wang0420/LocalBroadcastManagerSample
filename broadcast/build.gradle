@@ -21,9 +21,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':broadcast-annotation')
+    api 'com.github.wang:broadcastAnnotation:1.0.0'
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 }
-//apply from: "../upload_bintray.gradle"
+apply from: "../upload_bintray.gradle"

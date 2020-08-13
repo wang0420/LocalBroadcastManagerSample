@@ -25,5 +25,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation project(':broadcast')
+   // implementation 'com.github.wang:broadcast-lib:1.0.0'
     annotationProcessor project(':broadcast-compiler')
 }
