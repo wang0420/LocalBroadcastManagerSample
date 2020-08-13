@@ -15,7 +15,6 @@ buildscript {
         jcenter()
         maven {
             url 'https://dl.bintray.com/wangwei15/maven/'
-
         }
 
     }
@@ -36,7 +35,6 @@ allprojects {
         jcenter()
         maven {
             url 'https://dl.bintray.com/wangwei15/maven/'
-
         }
     }
 }

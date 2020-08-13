@@ -1,5 +1,5 @@
 apply plugin: 'java-library'
-
+//apply from: "../upload_bintray.gradle"
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':broadcast-annotation')

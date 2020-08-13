@@ -4,7 +4,7 @@ android {
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        applicationId "com.wang.broadcast"
+        applicationId "com.wang.sample"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode 1
