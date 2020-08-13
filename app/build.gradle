@@ -9,16 +9,38 @@ android {
         targetSdkVersion versions.compileSdk
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    buildTypes {
+    signingConfigs {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            keyAlias 'broadcast'
+            keyPassword '123456789'
+            storeFile file('./key/keystore.jks')
+            storePassword '123456789'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled true //开启代码混淆
+            zipAlignEnabled true
+            shrinkResources true // 移除无用资源
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false //开启代码混淆
+            zipAlignEnabled false
+            shrinkResources false // 移除无用资源
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+
+
 }
 
 dependencies {

@@ -9,8 +9,8 @@ classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
 6、执行 gradlew bintrayUpload  用于将生成的 pom，aar 等文件上传至 bintray 仓库中；
 7、如果是第一次上传  需要发布到 JCenter  ，Add to JCenter 的提示，点击提交 commit 就可以啦
 
-
-
 参考文章
+https://blog.csdn.net/Android_Study_OK/article/details/85283981
 https://www.jianshu.com/p/af110569a573
-http://ddrv.cn/a/227610
+https://www.jianshu.com/p/54e0107a2696
+https://www.jianshu.com/p/9c6ac57e80f4
