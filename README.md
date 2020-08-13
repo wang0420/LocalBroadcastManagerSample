@@ -7,6 +7,10 @@
 https://www.jianshu.com/p/bcddc376c0ef
 
 # 使用说明
+   ```
+    implementation 'com.github.wang:local-broadcast:1.0.0'
+    annotationProcessor 'com.github.wang:local-broadcast-compiler:1.0.0'
+    ```
 1. 注册广播
 
     ```java
