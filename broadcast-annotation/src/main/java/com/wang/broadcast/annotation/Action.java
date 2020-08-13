@@ -6,8 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /*
- * 1.0.0
- * wangwei
  * 2019/5/18
  * (RetentionPolicy.CLASS) 自定义注解默认是RetentionPolicy.CLASS，
  * 看的出来Java是推荐把注解放到.class中去的。
