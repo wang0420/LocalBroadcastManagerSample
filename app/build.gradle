@@ -48,8 +48,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.github.wang:launchTask:1.4.0'
-    // implementation project(':broadcast')
-    //annotationProcessor project(':broadcast-compiler')
-    implementation 'com.github.wang:local-broadcast:1.0.0'
-    annotationProcessor 'com.github.wang:local-broadcast-compiler:1.0.0'
+    implementation project(':broadcast')
+    annotationProcessor project(':broadcast-compiler')
+ /*   implementation 'com.github.wang:local-broadcast:1.0.0'
+    annotationProcessor 'com.github.wang:local-broadcast-compiler:1.0.0'*/
 }
