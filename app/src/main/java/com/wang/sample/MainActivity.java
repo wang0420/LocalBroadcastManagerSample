@@ -1,4 +1,4 @@
-package com.wang.broadcast;
+package com.wang.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.wang.broadcast.BroadcastUtil;
 import com.wang.broadcast.annotation.Action;
 
 import androidx.annotation.Nullable;

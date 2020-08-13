@@ -1,4 +1,4 @@
-package com.wang.broadcast;
+package com.wang.sample;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wang.broadcast.BroadcastUtil;
 import com.wang.broadcast.annotation.Action;
 
 import androidx.annotation.NonNull;
@@ -73,16 +74,19 @@ public class BlankFragment extends Fragment {
         String str = bundle.getString("text");
         mTextView.append(str + " - " + this.toString() + " - " + str + "\n");
     }
+
     @Action("test111")
     public void test11() {
         // 参数测试
 
     }
+
     @Action("test11111")
     public void test1111() {
         // 参数测试
 
     }
+
     @Action("test1")
     public void test1() {
         // 参数测试
