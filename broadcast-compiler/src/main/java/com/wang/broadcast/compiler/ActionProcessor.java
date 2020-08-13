@@ -26,8 +26,8 @@ import javax.lang.model.util.Elements;
 import javax.tools.Diagnostic;
 
 /**
- * @author wnagwei
- * @date 2019/5/18
+ * wangwei
+ * 2019/5/18
  */
 @AutoService(Processor.class)
 public class ActionProcessor extends AbstractProcessor {

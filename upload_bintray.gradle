@@ -7,8 +7,8 @@ def issueUrl = 'https://github.com/wang0420/LocalBroadcastManagerSample/issues' 
 //参考 compile 'groupId:artifactId:version'，groupId就是group version下面的版本
 group "com.github.wang" //groupId
 version = "1.0.0" // # 发布版本号
-def artifactIdName = 'broadcast'// # artifactId
-def projectName = 'broadcast' // #这个是显示在bintray 仓库中的项目名字，一般可用项目名称
+def artifactIdName = 'local-broadcast-compiler'// # artifactId
+def projectName = 'broadcastCompiler' // #这个是显示在bintray 仓库中的项目名字，一般可用项目名称
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())

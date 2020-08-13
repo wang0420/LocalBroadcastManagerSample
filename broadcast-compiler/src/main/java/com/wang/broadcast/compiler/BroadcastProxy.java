@@ -18,8 +18,8 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
 
 /**
- * @author wnagwei
- * @date 2019/5/18
+ * wangwei
+ * 2019/5/18
  */
 public class BroadcastProxy {
 
