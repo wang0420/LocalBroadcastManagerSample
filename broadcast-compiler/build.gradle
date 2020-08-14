@@ -2,7 +2,8 @@ apply plugin: 'java-library'
 //apply from: "../upload_bintray.gradle"
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.wang:local-broadcast-annotation:1.0.0'
+    implementation project(':broadcast-annotation')
+    //implementation 'com.github.wang:local-broadcast-annotation:1.0.0'
     implementation 'com.google.auto.service:auto-service:1.0-rc4'
     implementation 'com.squareup:javapoet:1.11.1'
 }

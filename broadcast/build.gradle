@@ -21,7 +21,8 @@ android {
 }
 
 dependencies {
-    api 'com.github.wang:local-broadcast-annotation:1.0.0'
+    api project(':broadcast-annotation')
+    //api 'com.github.wang:local-broadcast-annotation:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     api 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 }

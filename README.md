@@ -3,6 +3,7 @@
 # https://www.jianshu.com/p/96bf387f79ef
 # https://www.jianshu.com/p/fba2eec47976
 # 断点APT
+#ctrl+f9 前要先删除Build 文件  否则不会执行断点
 # https://www.jianshu.com/p/80ca9ad7e346
 https://www.jianshu.com/p/bcddc376c0ef
 
