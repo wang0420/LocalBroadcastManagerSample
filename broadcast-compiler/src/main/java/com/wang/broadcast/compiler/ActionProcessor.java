@@ -98,6 +98,7 @@ public class ActionProcessor extends AbstractProcessor {
             BroadcastProxy proxyInfo = mProxyMap.get(key);
 
             String packageName = proxyInfo.getPackageName();
+            //开始动态生成代码
             TypeSpec generateClass = proxyInfo.generateClass();
 
             JavaFile javaFile = JavaFile.builder(packageName, generateClass).build();

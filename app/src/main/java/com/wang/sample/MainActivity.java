@@ -71,11 +71,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Action("main_activity")
+    @Action({"main_activity","swsww"})
     public void mainaa() {
         // 参数测试
 
     }
 
+    @Action("main_activity111")
+    public void mainaa11() {
+        // 参数测试
 
+    }
 }
